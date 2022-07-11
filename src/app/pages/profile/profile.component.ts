@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() {}
+  constructor(private router: Router) {}
+  doLogout(){
+    localStorage.clear();
+    this.router.navigateByUrl('/')
+    window.location.reload();
+  }
   ngOnInit(): void {
       let form: any = document.getElementById("login");
       form.addEventListener(
@@ -29,8 +35,6 @@ export class ProfileComponent implements OnInit {
                           break;
                   }
               }
-              // Place your API call here to submit your payload.
-              // console.log('payload', payload);
           },
           true
       );

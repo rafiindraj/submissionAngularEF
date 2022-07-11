@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  isLogin = false
   // mobileMenuOpen = false
   // isSearchBoxOpen = false
   // isOpen = false
@@ -63,13 +64,28 @@ export class HeaderComponent implements OnInit {
   isList: number;
   isMenu: boolean = false;
   isSearch: boolean = false;
-  constructor(private route : Router) {}
+  constructor(private route : Router) {
+  
+  }
   ngOnInit(): void {
+    if( localStorage.getItem("Login")!=null ){
+      this.isLogin = true
+    }
+    else {
+      this.isLogin = false
+    }
     // this. openModal(true)
   }
   showModal = false;
   cartPage(){
     this.route.navigateByUrl('/cart');
+  }
+
+  authenticate(){
+    if(this.isLogin){
+      this.route.navigateByUrl('/profile');
+    }
+   
   }
 
 }
