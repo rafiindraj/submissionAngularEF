@@ -1,6 +1,6 @@
 {
-  "name": "veggiesApp",
-  "short_name": "veggiesApp",
+  "name": "veggies-app",
+  "short_name": "veggies-app",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

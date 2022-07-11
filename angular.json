@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "veggiesApp": {
+    "veggies-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
             "path": "./webpack.config.js"
          },
           "options": {
-            "outputPath": "dist/veggiesApp/browser",
+            "outputPath": "dist/veggies-app/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -74,18 +74,18 @@
             "path": "./webpack.config.js"
          },
           "options": {
-            "browserTarget": "veggiesApp:build"
+            "browserTarget": "veggies-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "veggiesApp:build:production"
+              "browserTarget": "veggies-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "veggiesApp:build"
+            "browserTarget": "veggies-app:build"
           }
         },
         "test": {
@@ -124,18 +124,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "veggiesApp:serve"
+            "devServerTarget": "veggies-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "veggiesApp:serve:production"
+              "devServerTarget": "veggies-app:serve:production"
             }
           }
         },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/veggiesApp/server",
+            "outputPath": "dist/veggies-app/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
@@ -156,21 +156,21 @@
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "options": {
-            "browserTarget": "veggiesApp:build",
-            "serverTarget": "veggiesApp:server"
+            "browserTarget": "veggies-app:build",
+            "serverTarget": "veggies-app:server"
           },
           "configurations": {
             "production": {
-              "browserTarget": "veggiesApp:build:production",
-              "serverTarget": "veggiesApp:server:production"
+              "browserTarget": "veggies-app:build:production",
+              "serverTarget": "veggies-app:server:production"
             }
           }
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "browserTarget": "veggiesApp:build:production",
-            "serverTarget": "veggiesApp:server:production",
+            "browserTarget": "veggies-app:build:production",
+            "serverTarget": "veggies-app:server:production",
             "routes": [
               "/"
             ]
@@ -182,5 +182,5 @@
       }
     }
   },
-  "defaultProject": "veggiesApp"
+  "defaultProject": "veggies-app"
 }
