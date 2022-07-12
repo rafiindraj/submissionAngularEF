@@ -20,32 +20,14 @@ export class PageLoginRegComponent implements OnInit {
   isAuthenticated = "true"
   constructor(private router: Router, private sharedDataService: DataLibService, private fb: FormBuilder) {
     this.loginForm = fb.group({
-      username: [
-        null,
-        [Validators.required, Validators.pattern(/^(admin|user)$/)],
-      ],
-      password: [
-        null,
-        [Validators.required],
-      ],
+      username: [null, [Validators.required, Validators.pattern(/^(admin|user)$/)]],
+      password: [null, [Validators.required]],
     });
     this.registerForm = fb.group({
-      firstname: [
-        null,
-        [Validators.required],
-      ],
-      lastname: [
-        null,
-        [Validators.required],
-      ],
-      username: [
-        null,
-        [Validators.required, Validators.pattern(/^(admin|user)$/)],
-      ],
-      password: [
-        null,
-        [Validators.required],
-      ],
+      firstname: [null, [Validators.required]],
+      lastname: [null, [Validators.required]],
+      username: [null,[Validators.required, Validators.pattern(/^(admin|user)$/)]],
+      password: [null, [Validators.required]],
     });
   }
 
@@ -53,7 +35,6 @@ export class PageLoginRegComponent implements OnInit {
   }
 
   doRegister() {
-    debugger
       this.isRegis = false
       console.log(this.registerForm.value)
   }
